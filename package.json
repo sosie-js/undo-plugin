@@ -1,0 +1,41 @@
+{
+  "name": "@sosie-js/undo-plugin",
+  "version": "1.0.0",
+  "keywords": [
+    "sosie",
+    "undo-plugin",
+    "sosiejs"
+  ],
+  "description": "Undo plugin for SoSIE.js",
+  "license": "MIT",
+  "repository": "https://github.com/sosie-js/undo-plugin",
+  "main": "./dist/bundle.js",
+  "scripts": {
+    "build:minify": "yarn install;node minify.js",
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development --watch",
+    "lint": "eslint src/ --ext .js",
+    "lint:errors": "eslint src/ --ext .js --quiet",
+    "lint:fix": "eslint src/ --ext .js --fix",
+    "lint:init": "eslint src/ --ext .js --init"
+  },
+  "author": {
+    "name": "sosie",
+    "email": "sosie@sos-productions.com"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-import": "^2.20.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "@node-minify/core": "^6.0.0",
+    "@node-minify/terser": "^6.0.0"
+  }
+}
