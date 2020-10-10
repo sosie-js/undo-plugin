@@ -53,7 +53,7 @@ this will generate an equivalent of
         * Plugins
         */
          await loadPlugins([
-            {'sosie-js/script-loader@2.2.0': '[example/plugins/script-loader](https://github.com/sosie-js/script-loader)'}, //virtual , already loaded we keep a version trace here
+            {'sosie-js/script-loader@3.0.0': '[example/plugins/script-loader](https://github.com/sosie-js/script-loader)'}, //virtual , already loaded we keep a version trace here
             {'sosie-js/undo-plugin@1.0.0': ['[example/plugins/undo-plugin](https://github.com/sosie-js/undo-plugin)',['dist/bundle.js','dist/sample.js']]},
         ],nocache,mode,target);
 ```
