@@ -10,6 +10,8 @@ Provides Undo.init() to initialise Undo just after editor isready.
 
 ### Sample 
 
+![](undo_panel.png)
+
 The sample will add the Undo button, the position in History and Redo button on SoSIe Menubar so you will be able to undo and redo changes.
 
 ## Integration
