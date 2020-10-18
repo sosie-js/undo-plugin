@@ -5,11 +5,20 @@ Undo.init = (editor) => {
 
   const undo = new Undo({ editor });
 
-  // true is to avoid sanitizing Blocks, requires to patch editorjs
-  editor.save(true).then((initialData) => {
+  
+  console.log("UNDO",undo);
+  
+  //avoid sanitizer to polluate Undo Stack
+  undo.disable();
+  
+  // alternative to .save(true) who was to avoid sanitizing Blocks,
+  // but requires to patch editorjs-undo, use tool-configurator instead of just patching editor-js
+  editor.save().then((initialData) => {
     undo.initialize(initialData);
+    undo.enable();
   }).catch((error) => {
     console.log('Saving failed: ', error);
+    undo.enable();
   });
 
   editor.undo = undo;
