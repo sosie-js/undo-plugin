@@ -1,15 +1,26 @@
+/*!
+* Undo tool helper plugin
+* 
+* @version 1.1.0
+* @package https://github.com/sosie-js/undo-plugin
+**/
+
+/**
+ * init Undo tool by setting initiaildata in the undo stack
+ * 
+ * @param {Object} editor - Editor.js API 
+ */
 Undo.init = (editor) => {
-  /**
-    Initialize undo stack
-    * */
 
   const undo = new Undo({ editor });
 
-  // true is to avoid sanitizing Blocks, requires to patch editorjs
-  editor.save(true).then((initialData) => {
+  undo.disable();
+  editor.save().then((initialData) => {
     undo.initialize(initialData);
+    undo.enable();
   }).catch((error) => {
     console.log('Saving failed: ', error);
+    undo.enable();
   });
 
   editor.undo = undo;

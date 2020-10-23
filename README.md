@@ -1,4 +1,4 @@
-![](https://badgen.net/badge/SoS正/0.7.0/f2a) ![](https://badgen.net/badge/editor.js/v2.1.8/blue) ![](https://badgen.net/badge/plugin/v1.0.0/orange) 
+![](https://badgen.net/badge/SoS正/0.8.0/f2a) ![](https://badgen.net/badge/editor.js/v2.1.9/blue) ![](https://badgen.net/badge/plugin/v1.1.0/orange) 
 
 # Undo Plugin to init the Editor-Undo and render control buttons in SoSIE editor
 

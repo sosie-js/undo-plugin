@@ -75,9 +75,11 @@ function sampleUndo(editor) {
         const redoButton = editor.sosie.get('redoButton');
         const ubtn = undoButton.firstChild.lastChild;
         const rbtn = redoButton.firstChild.lastChild;
+        
         const { undo } = editor;
 
         // Refresh Undo/Redo button state
+        
         if (undo.count()) {
         ubtn.removeAttribute('disabled');
 
@@ -106,15 +108,22 @@ function sampleUndo(editor) {
         }
         }
 
-        // Refresh examination button state
-    /*  if(undo.position ==0) {
-            ebtn.setAttribute('disabled','disabled');
-            console.log('ebtn disabled');
-        } else {
-            ebtn.removeAttribute('disabled');
-            console.log('ebtn enabled');
-        }*/ 
-
+        try {
+           const examineButton = editor.sosie.get('examineButton');
+           const ebtn=examineButton.firstChild.lastChild;
+           // Refresh examination button state
+       
+            if(undo.position ==0) {
+                ebtn.setAttribute('disabled','disabled');
+                console.log('ebtn disabled');
+            } else {
+                ebtn.removeAttribute('disabled');
+                console.log('ebtn enabled');
+            } 
+         } catch(e) {
+           console.log('Examine button not found, maybe view-plugin is disabled');
+         }
+         
         editor.sosie.get('historyPosition').value = undo.position;
         // console.log(historyPosition);
         console.log(`update${undo.position}/${undo.count()}`);
